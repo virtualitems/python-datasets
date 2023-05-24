@@ -7,7 +7,7 @@ Conjunto de clases abstractas para la implementación de bases de datos orientad
 
 <br/>
 
-1. Implementa las clases Dataset, ObjectStore y Database.
+**1. Implementa las clases Dataset, ObjectStore y Database.**
 
 <br/>
 
@@ -86,7 +86,7 @@ class MyDatabase(Database):
 
 <br/>
 
-2. Crea la instancia de la base de datos y usa los métodos de acceso a los datos.
+**2. Crea la instancia de la base de datos y usa los métodos de acceso a los datos.**
 
 <br/>
 
