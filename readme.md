@@ -29,7 +29,7 @@ class MyDataset(Dataset):
         Comprueba si el registro está vacío.
         """
         for item in self.__dict__.values():
-            if not item:
+            if item:
                 return False
         return True
 
