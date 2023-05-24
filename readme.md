@@ -28,7 +28,6 @@ class MyDataset(Dataset):
         """
         Comprueba si el registro está vacío.
         """
-
         for item in self.__dict__.values():
             if not item:
                 return False
@@ -59,12 +58,6 @@ class MyObjectStore(ObjectStore):
             dataset.email = item[1]
 
             yield dataset
-
-    def get(self, key):
-        """
-        Obtiene un registro de la colección.
-        """
-        return self._data.get(key)
 
 
 class MyDatabase(Database):

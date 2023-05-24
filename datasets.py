@@ -60,9 +60,6 @@ class Dataset(ABC):
 class ObjectStore(ABC):
     """Collection of datasets"""
 
-    def __getitem__(self, key) -> 'object':
-        return self.get(key)
-
     def __iter__(self):
         return iter(self.datasets())
 
@@ -75,14 +72,6 @@ class ObjectStore(ABC):
 
         Returns:
             generator
-        """
-
-    @abstractmethod
-    def get(self, key) -> 'object':
-        """obtain a dataset by key
-
-        Args:
-            key: key of the dataset
         """
 
 
