@@ -53,7 +53,7 @@ class MyObjectStore(ObjectStore):
         """
         for item in self._data:
 
-            dataset = MyDataset ()
+            dataset = MyDataset()
             dataset.name = item[0]
             dataset.email = item[1]
 
