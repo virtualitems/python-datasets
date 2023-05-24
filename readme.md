@@ -2,10 +2,10 @@
 
 Conjunto de clases abstractas para la implementación de bases de datos orientadas a objetos en Python.
 
+<br/>
+
 
 ## Uso
-
-<br/>
 
 **1. Implementa las clases Dataset, ObjectStore y Database.**
 
@@ -108,6 +108,3 @@ for dataset in store.datasets():
     print(dataset.__dict__)  # operaciones para cada uno de los registros de la colección
 
 ```
-
-<br/>
-
