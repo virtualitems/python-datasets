@@ -54,8 +54,14 @@ class MyObjectStore(ObjectStore):
         for item in self._data:
 
             dataset = MyDataset()
-            dataset.name = item[0]
-            dataset.email = item[1]
+
+            try:
+                # intenta asignar los valores del registro
+                # se detiene si hay un IndexError
+                dataset.name = item[0]
+                dataset.email = item[1]
+            except IndexError:
+                pass
 
             yield dataset
 
@@ -96,6 +102,8 @@ data = {
     'users': [
         ('John Doe', 'jhon.doe@example.com'),
         ('Mary Jane', 'mary.jane@example.com'),
+        ('Annonymous', ''),  # registro incompleto
+        tuple(),  # registro vacío
     ]
 }
 
@@ -105,6 +113,11 @@ store = database.get('users')  # obtiene la colección de la base de datos
 print('collection: users')
 
 for dataset in store.datasets():
-    print(dataset.__dict__)  # operaciones para cada uno de los registros de la colección
+
+    # operaciones para cada uno de los registros de la colección
+    if dataset.is_valid():
+        print('válido: ', dataset.__dict__)
+    else:
+        print('inválido: ', dataset.__dict__)
 
 ```
