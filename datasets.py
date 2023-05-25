@@ -40,22 +40,6 @@ class Dataset(ABC):
     def __bool__(self) -> 'bool':
         return self.is_valid()
 
-    @abstractmethod
-    def is_empty(self) -> 'bool':
-        """define what is an empty dataset
-
-        Returns:
-            bool: True if empty
-        """
-
-    @abstractmethod
-    def is_valid(self) -> 'bool':
-        """define what is a valid dataset
-
-        Returns:
-            bool: True if valid
-        """
-
 
 class ObjectStore(ABC):
     """Collection of datasets"""
