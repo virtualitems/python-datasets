@@ -24,12 +24,6 @@ class MyDataset(Dataset):
         self.name = None
         self.email = None
 
-    def is_valid(self):
-        """
-        Valida los valores del registro.
-        """
-        return bool(self.name and self.email)
-
 
 class MyObjectStore(ObjectStore):
     """Colección de registros"""
@@ -105,9 +99,6 @@ print('collection: users')
 
 for dataset in store.datasets():
     # operaciones para cada uno de los registros de la colección
-    if dataset.is_valid():
-        print('valid: ', dataset.__dict__)
-    else:
-        print('invalid: ', dataset.__dict__)
+    print(dataset.__dict__)
 
 ```

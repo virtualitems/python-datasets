@@ -32,21 +32,13 @@ class Dataset(ABC):
     """Dataclass for a dataset"""
 
     def __iter__(self):
-        return iter(self.__dict__.items())
+        return iter(self.__dict__.values())
 
     def __len__(self) -> 'int':
         return len(self.__dict__)
 
     def __bool__(self) -> 'bool':
-        return self.is_valid()
-    
-    @abstractmethod
-    def is_valid(self) -> 'bool':
-        """define what is a valid dataset
-
-        Returns:
-            bool: True if valid
-        """
+        return all(self.__dict__.values())
 
 
 class ObjectStore(ABC):
