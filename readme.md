@@ -24,6 +24,7 @@ class MyDataset(Dataset):
         self.name = None
         self.email = None
 
+
 class MyObjectStore(ObjectStore):
     """Colección de registros"""
 
