@@ -24,22 +24,6 @@ class MyDataset(Dataset):
         self.name = None
         self.email = None
 
-    def is_empty(self) -> bool:
-        """
-        Comprueba si el registro está vacío.
-        """
-        for item in self.__dict__.values():
-            if item:
-                return False
-        return True
-
-    def is_valid(self) -> bool:
-        """
-        Comprueba si el registro es válido.
-        """
-        return not self.is_empty()
-
-
 class MyObjectStore(ObjectStore):
     """Colección de registros"""
 
@@ -113,11 +97,7 @@ store = database.get('users')  # obtiene la colección de la base de datos
 print('collection: users')
 
 for dataset in store.datasets():
-
     # operaciones para cada uno de los registros de la colección
-    if dataset.is_valid():
-        print('válido: ', dataset.__dict__)
-    else:
-        print('inválido: ', dataset.__dict__)
+    print(dataset.__dict__)
 
 ```
