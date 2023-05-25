@@ -50,6 +50,9 @@ class ObjectStore(ABC):
     def __len__(self) -> 'int':
         return len(self.datasets())
 
+    def __bool__(self) -> 'bool':
+        return bool(tuple(self.datasets()))
+
     @abstractmethod
     def datasets(self) -> 'Generator[Dataset, None, None]':
         """generator of datasets
@@ -70,6 +73,9 @@ class Database(ABC):
 
     def __len__(self) -> 'int':
         return len(self.stores())
+
+    def __bool__(self) -> 'bool':
+        return bool(tuple(self.stores()))
 
     @abstractmethod
     def get(self, key) -> 'ObjectStore':
